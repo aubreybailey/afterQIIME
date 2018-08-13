@@ -1,0 +1,10 @@
+^.*\.Rproj$
+^\.Rproj\.user$
+^\.Rhistory
+^\.RData
+^\.Rproj.user
+^\.Ruserdata
+packrat/lib*/
+packrat/src/
+man/*
+inst/doc

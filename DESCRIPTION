@@ -1,0 +1,32 @@
+Package: afterQIIME
+type: package
+Title: Convenience Functions for use in making standard figures expected to be included in 16S papers.
+Version: 0.0.0.9000
+Authors@R: person("Aubrey", "Bailey", email = "AubreyBailey@gmail.com", role = c("aut", "cre"))
+Description: Shortens common tasks associated with a 16S investigation to one-liners. 
+Included are alpha-diversity (observed-species, single-rarefaction) boxplots,
+beta-diversity (PCoA) ordination and Adonis (PERMANOVA) testing,
+taxon grouping and Kruskal-Wallis testing.
+Depends: R (>= 3.5.0), 
+License: GPL (>= 2)
+Encoding: UTF-8
+LazyData: true
+URL: https://github.com/aubreybailey/afterQIIME
+BugReports: https://github.com/aubreybailey/afterQIIME/issues
+RdMacros: Rdpack
+RoxygenNote: 6.0.1
+Imports:
+    vegan,
+    ggplot2,
+    proto,
+    ape,
+    reshape2,
+    plyr,
+    Rdpack
+Suggests: 
+    devtools,
+    roxygen2,
+    testthat,
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
