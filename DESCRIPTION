@@ -1,9 +1,11 @@
 Package: afterQIIME
 Type: Package
-Title: Convenience Functions for Standard Figures Expected in 16S Publications.
+Title: Convenience Functions for Standard Figures Expected in 16S Publications
 Version: 0.0.0.9000
-Authors@R: person("Aubrey", "Bailey", email = "AubreyBailey@gmail.com",
-                   role = c("aut", "cre"))
+Authors@R: c(person("Aubrey", "Bailey", email = "AubreyBailey@gmail.com",
+                   role = c("aut", "cre")),
+                   person("Kyle", "Bittinger", email = "kylebittinger@gmail.com",
+                   role = c("aut")))
 Description: Shortens common tasks associated with a 16S investigation to one-liners.
     Included are alpha-diversity (observed-species, single-rarefaction) boxplots,
     beta-diversity (PCoA) ordination and Adonis (PERMANOVA) testing,
@@ -16,10 +18,14 @@ BugReports: https://github.com/aubreybailey/afterQIIME/issues
 RdMacros: Rdpack
 RoxygenNote: 6.1.0
 Imports:
+    stats,
     vegan,
     ggplot2,
     ape,
+    qiimer,
     reshape2,
+    dplyr,
+    fossil,
     Rdpack
 Suggests:
     devtools,
