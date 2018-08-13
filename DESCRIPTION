@@ -1,13 +1,12 @@
 Package: afterQIIME
-type: package
-Title: Convenience Functions for use in making standard figures expected to be included in 16S papers.
+Type: Package
+Title: Convenience Functions for Standard Figures Expected in 16S Publications.
 Version: 0.0.0.9000
 Authors@R: person("Aubrey", "Bailey", email = "AubreyBailey@gmail.com", role = c("aut", "cre"))
-Description: Shortens common tasks associated with a 16S investigation to one-liners. 
-Included are alpha-diversity (observed-species, single-rarefaction) boxplots,
-beta-diversity (PCoA) ordination and Adonis (PERMANOVA) testing,
-taxon grouping and Kruskal-Wallis testing.
-Depends: R (>= 3.5.0), 
+Description: Shortens common tasks associated with a 16S investigation to one-liners.
+    Included are alpha-diversity (observed-species, single-rarefaction) boxplots,
+    beta-diversity (PCoA) ordination and Adonis (PERMANOVA) testing,
+    taxon grouping and Kruskal-Wallis testing.
 License: GPL (>= 2)
 Encoding: UTF-8
 LazyData: true
@@ -23,7 +22,7 @@ Imports:
     reshape2,
     plyr,
     Rdpack
-Suggests: 
+Suggests:
     devtools,
     roxygen2,
     testthat,
