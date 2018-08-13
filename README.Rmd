@@ -1,0 +1,47 @@
+---
+output:
+  md_document:
+    variant: markdown_github
+---
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+#build status:
+
+[![Build Status](https://travis-ci.org/aubreybailey/afterQIIME.svg?branch=master)](https://travis-ci.org/aubreybailey/afterQIIME)
+
+#license:
+
+[![Licence](https://img.shields.io/badge/licence-GPL--2-blue.svg)](https://www.gnu.org/licenses/gpl-2.0.en.html)
+
+#release version:	
+
+[![packageversion](https://img.shields.io/badge/GitHub%20Package%20version-0.0.0.9000-orange.svg?style=flat-square)](commits/master)
+
+##dr4pl
+
+This is a description of what afterQIIME is and does. 
+
+## Installation
+
+You can install dr4pl from github with:
+
+```{r gh-installation, eval = FALSE}
+# install.packages("devtools")
+devtools::install_bitbucket("dittmerlab/dr4pl")
+```
+
+## Requirements
+Files need to be in TSV, and include a mapping and counts table. Biom support pending.
+
+## Example
+
+This is a basic example which shows the major uses of the package.
+
+```{r example_problem, error=TRUE}
+
+```
