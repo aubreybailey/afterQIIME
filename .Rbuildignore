@@ -1,10 +1,9 @@
 ^.*\.Rproj$
 ^\.Rproj\.user$
-^\.Rhistory
-^\.RData
-^\.Rproj.user
-^\.Ruserdata
-packrat/lib*/
-packrat/src/
-man/*
-inst/doc
+^packrat/
+^\.travis\.yml$
+^bitbucket-pipelines\.yml$
+^makefile$
+^cran-comments.md$
+^README\.Rmd$
+^README-.*\.png$
