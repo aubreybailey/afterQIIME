@@ -31,9 +31,12 @@ test_otu_abundance <- function (s, cts, var="study_group", a=NULL, min_fraction=
     Stat = sapply(res$tests, `[[`, "statistic"),
     Pval = sapply(res$tests, `[[`, "p.value"))
 
-  res$df <- within(res$df, {
-    Fdr <- p.adjust(Pval, method="fdr")
-  })
+  # res$df <- within(res$df, {
+  #   Fdr <- p.adjust(Pval, method="fdr")
+  # })
+  #this avoids appearing (unjustly) as a global variable to R CMD CHECK
+  res$df$Fdr <- p.adjust(res$df$Pval, method="fdr")
+
   res$df <- arrange(res$df, Pval)
 
   plot_otus <- as.character(subset(res$df, Pval < 0.05)$OtuID)
@@ -44,9 +47,12 @@ test_otu_abundance <- function (s, cts, var="study_group", a=NULL, min_fraction=
   plotdf <- melt(props[plot_otus,], varnames=c("OtuID", "SampleID"), value.name="Proportion")
   plotdf <- merge(plotdf, res$df, by="OtuID", all.x=T, all.y=F)
   plotdf <- merge(plotdf, s, by="SampleID", all.x=T, all.y=F)
-  plotdf <- within(plotdf, {
-    Label <- factor(paste(OtuID, Taxon))
-  })
+# again avoiding an unjust NOTE
+  # plotdf <- within(plotdf, {
+  #   Label <- factor(paste(OtuID, Taxon))
+  # })
+  plotdf$Label <- factor(paste(OtuID, Taxon))
+
   plotdf$Label <- reorder(plotdf$Label, plotdf$Pval)
 
   res$plot <- ggplot(plotdf) +
@@ -55,7 +61,8 @@ test_otu_abundance <- function (s, cts, var="study_group", a=NULL, min_fraction=
     theme_classic() +
     theme(
       strip.text.x = element_text(size = 8),
-      strip.text.y = element_text(size = 8))
+      strip.text.y = element_text(size = 8)
+    )
 
   class(res) <- "otu_abundance_tests"
   res

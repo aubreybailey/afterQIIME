@@ -22,7 +22,7 @@ pcoa_2way <- function(sample_mapping, distance_matrix, color="study_group", shap
   pcdf <- cbind(sample_mapping, pc$vectors[sample_mapping$SampleID,1:3])
 
   ggplot(pcdf) +
-    geom_point(aes(x=Axis.1, y=Axis.2, color=DayOfTreatment, shape=study_group),  size=4) +
+    geom_point(aes(x="Axis.1", y="Axis.2", color=color, shape=shape),  size=4) +
     scale_color_brewer(palette="Set1") +
     scale_shape_discrete(solid=F) +
     labs(
@@ -41,7 +41,9 @@ pcoa_2way <- function(sample_mapping, distance_matrix, color="study_group", shap
 
   # Make a simple plot, save in result
   res$plot <- ggplot(res$df, aes_string(x="Axis.1", y="Axis.2", color=var)) +
-    geom_point() + theme_classic() + xlab(sprintf("PC1 %s%s", test.pca.percExp[1], "%")) +
+    geom_point() +
+    theme_classic() +
+    xlab(sprintf("PC1 %s%s", test.pca.percExp[1], "%")) +
     ylab(sprintf("PC2 %s%s", test.pca.percExp[2], "%"))
   # scale_colour_brewer(palette="Set1") +
   # geom_text(aes(label = SampleID )) +  ( add , label=sample_mapping$SampleID to aes_string if using this)

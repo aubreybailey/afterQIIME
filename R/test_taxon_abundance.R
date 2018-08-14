@@ -30,9 +30,11 @@ test_taxon_abundance <- function (s, cts, var="study_group", a=NULL, min_fractio
     Taxon = names(res$tests),
     Stat = sapply(res$tests, `[[`, "statistic"),
     Pval = sapply(res$tests, `[[`, "p.value"))
-  res$df <- within(res$df, {
-    Fdr <- p.adjust(Pval, method="fdr")
-  })
+  # res$df <- within(res$df, {
+  #   Fdr <- p.adjust(Pval, method="fdr")
+  # })
+  #this avoids appearing (unjustly) as a global variable to R CMD CHECK
+  res$df$Fdr <- p.adjust(res$df$Pval, method="fdr")
   res$df <- arrange(res$df, Pval)
 
   plotdf <- melt(props, varnames=c("Taxon", "SampleID"), value.name="Proportion")

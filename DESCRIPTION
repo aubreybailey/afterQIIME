@@ -1,7 +1,7 @@
 Package: afterQIIME
 Type: Package
 Title: Convenience Functions for Standard Figures Expected in 16S Publications
-Version: 0.0.0.9000
+Version: 0.0.1
 Authors@R: c(person("Aubrey", "Bailey", email = "AubreyBailey@gmail.com",
                    role = c("aut", "cre")),
                    person("Kyle", "Bittinger", email = "kylebittinger@gmail.com",
