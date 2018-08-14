@@ -4,8 +4,10 @@ language: r
 sudo: false
 warnings_are_errors: true
 cache:
-  directories:
-   - /var/cache/apt/archives
+  - packages
+  - directories:
+     - /var/lib/texmf
+     - /home/travis/R-bin
 addons:
   apt:
     packages:
@@ -16,27 +18,18 @@ addons:
       - pandoc
       - texlive-latex-extra
       - libnlopt-dev
-      - r-cran-nloptr
-      - r-cran-multcomp
-      - r-cran-vegan
-      - r-cran-memoise
-      - r-cran-ape
-      - r-cran-ggplot2
-      - r-cran-testthat
       - r-cran-hdf5
       - r-cran-gsl
       - r-cran-knitr
       - r-cran-stringi
       - r-cran-stringr
       - r-cran-memoise
-      - r-cran-nlme
-      - r-cran-survival
       - r-cran-rcpp
-      - r-cran-plyr
-      - r-cran-magrittr
       - r-cran-mgcv
       - r-cran-rcurl
-      - r-cran-quantreg
+      - r-doc-pdf
+      - r-mathlib
+      - r-base-html
 before_deploy:
   - export RELEASE_PKG_FILE=$(ls dr4pl*.tar.gz)
   - echo "deploying $RELEASE_PKG_FILE to GitHub releases"
