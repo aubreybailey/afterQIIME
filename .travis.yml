@@ -4,7 +4,6 @@ language: r
 sudo: false
 warnings_are_errors: true
 cache:
-  packages
   directories:
    - /var/cache/apt/archives
 addons:
