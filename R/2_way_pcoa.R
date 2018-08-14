@@ -1,5 +1,3 @@
-#require(ggplot2)
-
 #' Perform a PCoA analysis of two variables
 #' @import ggplot2
 #' @import stats
