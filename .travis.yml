@@ -10,6 +10,7 @@ cache:
      - /home/travis/R-bin
 addons:
   apt:
+    update: true
     packages:
       - git
       - libxml2-dev
